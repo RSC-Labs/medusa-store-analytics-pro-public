@@ -14,7 +14,16 @@ Please raise an issue in Github issues.
 
 ## Installation
 
-Add plugin to your `medusa-config.js` with the licence key, which you received:
+1. Install plugin by adding to your `package.json`:
+
+```json
+...
+"@rsc-labs/medusa-store-analytics-pro-v2": "1.0.0" // or other version
+...
+```
+and execute install, e.g. `yarn install`.
+
+2. Add plugin to your `medusa-config.js` with the licence key, which you received:
 
 ```js
 ...
@@ -29,7 +38,7 @@ plugins: [
 ...
 ```
 
-Due to: https://github.com/medusajs/medusa/issues/11248 you need also add following configuration to `medusa-config.js`:
+  3. Due to: https://github.com/medusajs/medusa/issues/11248 you need also add following configuration to `medusa-config.js`:
 ```js
 admin: {
   vite: () => {
