@@ -18,7 +18,7 @@ Please raise an issue in Github issues.
 
 ```json
 ...
-"@rsc-labs/medusa-store-analytics-pro-v2": "1.0.0" // or other version
+"@rsc-labs/medusa-store-analytics-pro-v2": "1.1.0" // or other available version
 ...
 ```
 and execute install, e.g. `yarn install`.
@@ -44,7 +44,7 @@ admin: {
   vite: () => {
     return {
       optimizeDeps: {
-        include: ["@emotion/react", "@mui/material", "recharts"]
+        include: ["@emotion/react", "@mui/material", "recharts", "react-grid-layout"]
       },
     };
   },
