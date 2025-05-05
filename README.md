@@ -14,7 +14,11 @@ Please raise an issue in Github issues.
 
 ## Installation
 
-1. Install plugin by adding to your `package.json`:
+Plugins supports two versions of charts - basic and modern.
+
+### Basic charts (supported in version 1.x.x)
+
+1. Install plugin by adding to your `package.json`. Use version 1.x.x.
 
 ```json
 ...
@@ -35,6 +39,61 @@ plugins: [
       }
     }
 ]
+...
+```
+
+### Modern charts (supported in version 2.x.x)
+
+1. Install plugin by adding to your `package.json`. Use version 2.x.x.
+
+```json
+...
+"@rsc-labs/medusa-store-analytics-pro-v2": "2.0.0" // or other available version
+...
+```
+and execute install, e.g. `yarn install`.
+
+2. Add plugin to your `medusa-config.js` with the licence key, which you received:
+
+```js
+...
+plugins: [
+    {
+      resolve: "@rsc-labs/medusa-store-analytics-pro-v2",
+      options: {
+        licenceKey: <licence-key>
+      }
+    }
+]
+...
+```
+
+3. Configure `medusa-config.ts`
+
+```js
+import { withAnalyticsAdminConfig } from "@rsc-labs/medusa-store-analytics-pro-v2/css"
+...
+
+admin: {
+  vite: () => {
+    return withAnalyticsAdminConfig({}, { theme: 'sapphire'}) // or `daylight`
+  }
+},
+...
+```
+
+We support two themes - `sapphire` and `daylight`. You can preview them here: https://ui.shadcn.com/charts.
+If you have already some vite configuration you can include it in a first parameter, e.g.
+
+```js
+admin: {
+  vite: () => {
+    return withAnalyticsAdminConfig({
+      a: b,
+      c: d
+    }, { theme: 'sapphire'}) // or `daylight`
+  }
+},
 ...
 ```
 
